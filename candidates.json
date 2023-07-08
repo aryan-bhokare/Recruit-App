@@ -1,0 +1,143 @@
+[
+    {
+      "name": "John Smith",
+      "jobTitle": "Software Engineer",
+      "location": "New York",
+      "skills": "JavaScript, HTML, CSS",
+      "experience": "3 years"
+    },
+    {
+      "name": "Emily Johnson",
+      "jobTitle": "UX Designer",
+      "location": "San Francisco",
+      "skills": "UI/UX Design, Prototyping",
+      "experience": "5 years"
+    },
+    {
+      "name": "Michael Brown",
+      "jobTitle": "Data Scientist",
+      "location": "Chicago",
+      "skills": "Python, Machine Learning, Data Analysis",
+      "experience": "4 years"
+    },
+    {
+      "name": "Emma Davis",
+      "jobTitle": "Marketing Manager",
+      "location": "Los Angeles",
+      "skills": "Digital Marketing, SEO, Social Media",
+      "experience": "6 years"
+    },
+    {
+      "name": "Daniel Wilson",
+      "jobTitle": "Frontend Developer",
+      "location": "Seattle",
+      "skills": "HTML, CSS, JavaScript, React",
+      "experience": "2 years"
+    },
+    {
+      "name": "Olivia Taylor",
+      "jobTitle": "Graphic Designer",
+      "location": "Miami",
+      "skills": "Adobe Photoshop, Illustrator, Branding",
+      "experience": "3 years"
+    },
+    {
+      "name": "Matthew Anderson",
+      "jobTitle": "Product Manager",
+      "location": "Austin",
+      "skills": "Product Development, Agile, Market Analysis",
+      "experience": "5 years"
+    },
+    {
+      "name": "Sophia Martinez",
+      "jobTitle": "UI Developer",
+      "location": "Denver",
+      "skills": "HTML, CSS, JavaScript, UI Design",
+      "experience": "4 years"
+    },
+    {
+      "name": "Aiden Thompson",
+      "jobTitle": "Data Analyst",
+      "location": "Boston",
+      "skills": "SQL, Data Visualization, Statistical Analysis",
+      "experience": "3 years"
+    },
+    {
+      "name": "Ava Harris",
+      "jobTitle": "Full Stack Developer",
+      "location": "San Diego",
+      "skills": "HTML, CSS, JavaScript, Node.js, MongoDB",
+      "experience": "4 years"
+    },
+    {
+      "name": "William Clark",
+      "jobTitle": "UX Researcher",
+      "location": "Portland",
+      "skills": "User Research, Usability Testing, Persona Creation",
+      "experience": "5 years"
+    },
+    {
+      "name": "Isabella Lewis",
+      "jobTitle": "Content Writer",
+      "location": "Philadelphia",
+      "skills": "Copywriting, Blogging, SEO Writing",
+      "experience": "3 years"
+    },
+    {
+      "name": "James Lee",
+      "jobTitle": "Software Architect",
+      "location": "Dallas",
+      "skills": "Java, Spring Boot, Microservices",
+      "experience": "6 years"
+    },
+    {
+      "name": "Charlotte Baker",
+      "jobTitle": "Digital Marketer",
+      "location": "Atlanta",
+      "skills": "SEO, Social Media Marketing, Content Strategy",
+      "experience": "4 years"
+    },
+    {
+      "name": "Benjamin Turner",
+      "jobTitle": "Mobile App Developer",
+      "location": "Houston",
+      "skills": "Android, Java, Kotlin, iOS, Swift",
+      "experience": "3 years"
+    },
+    {
+      "name": "Mia White",
+      "jobTitle": "UI Designer",
+      "location": "San Jose",
+      "skills": "UI Design, Interaction Design, Prototyping",
+      "experience": "4 years"
+    },
+    {
+      "name": "Henry Hernandez",
+      "jobTitle": "Network Administrator",
+      "location": "Phoenix",
+      "skills": "Network Security, Cisco, Troubleshooting",
+      "experience": "5 years"
+    },
+    {
+      "name": "Ella Young",
+      "jobTitle": "Quality Assurance Engineer",
+      "location": "Las Vegas",
+      "skills": "Test Automation, Manual Testing, Bug Tracking",
+      "experience": "3 years"
+    },
+    {
+      "name": "Alexander King",
+      "jobTitle": "Business Analyst",
+      "location": "Detroit",
+      "skills": "Requirements Gathering, Process Improvement, Data Analysis",
+      "experience": "4 years"
+    },
+    {
+      "name": "Grace Scott",
+      "jobTitle": "Frontend Designer",
+      "location": "Washington, D.C.",
+      "skills": "HTML, CSS, JavaScript, UI/UX Design",
+      "experience": "3 years"
+    }
+  ]
+  

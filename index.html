@@ -1,0 +1,202 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruit</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./index.js"></script>
+</head>
+
+<body>
+  <div class="nav-wrapper">
+    <div class="grad-bar"></div>
+    <nav class="navbar">
+      <span>RECRUIT</span>
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav no-search">
+        <li class="nav-item"><a href="#">Home</a></li>
+        <li class="nav-item"><a href="./register.html">Register</a></li>
+        <li class="nav-item"><a href="./login.html">Login</a></li>
+        <li class="nav-item"><a href="#section">Contact Us</a></li>
+      </ul>
+    </nav>
+    </div>
+    <section class="hero">
+      <div class="moto-heading">
+        <h1 class="hero-heading">Revolutionize Your Hiring Process</h1> 
+          <h2>The Ultimate Recruitment App</h2>
+          <p>Effortlessly Discover and Hire Top Talent with Our Cutting-Edge Recruitment Solution</p>
+          <p> With <span>RECRUIT</span> you can search the eligible candidates with one click.</p>
+          <button><a href="#candidate-search">Candidate Search</a></button>
+        </div>
+    </section>
+    <div class="search" id="candidate-search">
+            <h1>Candidate Search</h1>
+            <p>Filter candidates according to your requirement</p>
+            <div class="search-form" id="search-form">
+                <input class="search-filters" type="text" id="jobTitleInput" placeholder="Job Title">
+                <input class="search-filters" type="text" id="locationInput" placeholder="Location">
+                <input class="search-filters" type="text" id="skillsInput" placeholder="Skills">
+                <input class="search-filters" type="text" id="experienceInput" placeholder="Experience">
+            </div>
+      </div>
+    
+      
+      <div class="card-container" id="searchResults">
+    
+    </div>
+    
+    <script>
+      fetch('candidates.json')
+        .then(response => response.json())
+        .then(data => {
+          const candidates = [...data];
+          const searchResults = document.getElementById('searchResults');
+    
+          function displayAllCandidates() {
+            searchResults.innerHTML = '';
+    
+            if (candidates.length === 0) {
+              searchResults.innerHTML = 'No candidates available.';
+            } else {
+              candidates.forEach(candidate => {
+                const candidateCard = document.createElement('div');
+                candidateCard.innerHTML = `
+                  <div class="card">
+                    <div class="header">
+                      <h3>${candidate.name}</h3>
+                    </div>
+                    <div class="container">
+                    <table>
+  <tr>
+    <td><strong>Job Title:</strong></td>
+    <td>${candidate.jobTitle}</th>
+   
+  </tr>
+  <tr>
+    <td><strong>Location:</strong></td>
+    <td> ${candidate.location}</td>
+ 
+  </tr>
+  <tr>
+    <td><strong>Skills:</strong></td>
+    <td> ${candidate.skills}</td>
+
+  </tr>
+  <tr>
+    <td><strong>Experience:</strong></td>
+    <td>${candidate.experience}</td>
+
+  </tr>
+</table>
+                    </div>
+                  </div>
+                `;
+                searchResults.appendChild(candidateCard);
+              });
+            }
+          }
+    
+          displayAllCandidates();
+    
+          function searchCandidates() {
+            const jobTitle = document.getElementById('jobTitleInput').value.toLowerCase();
+            const location = document.getElementById('locationInput').value.toLowerCase();
+            const skills = document.getElementById('skillsInput').value.toLowerCase();
+            const experience = document.getElementById('experienceInput').value.toLowerCase();
+    
+            const filteredCandidates = candidates.filter(candidate =>
+              candidate.jobTitle.toLowerCase().includes(jobTitle) &&
+              candidate.location.toLowerCase().includes(location) &&
+              candidate.skills.toLowerCase().includes(skills) &&
+              candidate.experience.toLowerCase().includes(experience)
+            );
+    
+            displayResults(filteredCandidates);
+          }
+    
+          function displayResults(results) {
+            searchResults.innerHTML = '';
+    
+            if (results.length === 0) {
+              searchResults.innerHTML = 'No results found.';
+            } else {
+              results.forEach(candidate => {
+                const candidateCard = document.createElement('div');
+                candidateCard.innerHTML = `
+                  <div class="card">
+                    <div class="header">
+                      <h3>${candidate.name}</h3>
+                    </div>
+                    <div class="container">
+                    <table>
+  <tr>
+    <td><strong>Job Title:</strong></td>
+    <td>${candidate.jobTitle}</th>
+   
+  </tr>
+  <tr>
+    <td><strong>Location:</strong></td>
+    <td> ${candidate.location}</td>
+ 
+  </tr>
+  <tr>
+    <td><strong>Skills:</strong></td>
+    <td> ${candidate.skills}</td>
+
+  </tr>
+  <tr>
+    <td><strong>Experience:</strong></td>
+    <td>${candidate.experience}</td>
+
+  </tr>
+</table>
+                    
+                    </div>
+                  </div>
+                `;
+                searchResults.appendChild(candidateCard);
+              });
+            }
+          }
+    
+          const searchInputs = document.querySelectorAll('input[type="text"]');
+          searchInputs.forEach(input => {
+            input.addEventListener('input', searchCandidates);
+          });
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    </script>
+    
+      </div>
+      <hr class="footer-hr"></hr>
+    <footer id="section">
+      <div class="footer-container">
+        <div class="footer-left">
+          <h3>About Us</h3>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae quos, totam voluptas omnis ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur mollitia, commodi labore voluptas corrupti ipsam quae voluptates. Reiciendis voluptatibus quisquam natus assumenda iusto unde ducimus dolore. Sit facilis quos ullam?</p>
+        </div>
+        <div class="footer-right">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <h4>© 2023 aryan - All Rights Reserved</h4>
+    </footer>
+    
+    
+</body>
+</html>
